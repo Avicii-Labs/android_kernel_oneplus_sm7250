@@ -7,7 +7,7 @@ gen_headers_srcs_arm64 = [
     "Makefile",
     "include/uapi/**/*.h",
     "arch/arm64/include/uapi/**/*.h",
-    "techpack/*/include/uapi/*/**/*.h",
+    "techpack/*/include/uapi/**/*.h",
 ]
 
 gen_headers_exclude_srcs_arm64 = [
@@ -972,8 +972,36 @@ gen_headers_out_arm64 = [
     "asm/ucontext.h",
     "asm/unistd.h",
 
-    // From techpack/*/include/uapi/*/**/*.h
+    // From techpack/*/include/uapi/**/*.h
 
+    "linux/avtimer.h",
+    "linux/mfd/wcd9xxx/wcd9320_registers.h",
+    "linux/mfd/wcd9xxx/wcd9xxx_registers.h",
+    "linux/msm_audio.h",
+    "linux/msm_audio_aac.h",
+    "linux/msm_audio_ac3.h",
+    "linux/msm_audio_alac.h",
+    "linux/msm_audio_amrnb.h",
+    "linux/msm_audio_amrwb.h",
+    "linux/msm_audio_amrwbplus.h",
+    "linux/msm_audio_ape.h",
+    "linux/msm_audio_calibration.h",
+    "linux/msm_audio_g711.h",
+    "linux/msm_audio_g711_dec.h",
+    "linux/msm_audio_mvs.h",
+    "linux/msm_audio_qcp.h",
+    "linux/msm_audio_sbc.h",
+    "linux/msm_audio_voicememo.h",
+    "linux/msm_audio_wma.h",
+    "linux/msm_audio_wmapro.h",
+    "linux/wcd-spi-ac-params.h",
+    "sound/audio_effects.h",
+    "sound/audio_slimslave.h",
+    "sound/devdep_params.h",
+    "sound/lsm_params.h",
+    "sound/msmcal-hwdep.h",
+    "sound/voice_params.h",
+    "sound/wcd-dsp-glink.h",
     "media/cam_cpas.h",
     "media/cam_custom.h",
     "media/cam_defs.h",
@@ -1007,7 +1035,7 @@ genrule {
         "--gen_dir $(genDir) " +
         "--arch_asm_kbuild $(location arch/arm64/include/uapi/asm/Kbuild) " +
         "--arch_include_uapi $(locations arch/arm64/include/uapi/**/*.h) " +
-        "--techpack_include_uapi $(locations techpack/*/include/uapi/*/**/*.h) " +
+        "--techpack_include_uapi $(locations techpack/*/include/uapi/**/*.h) " +
         "--asm_generic_kbuild $(location include/uapi/asm-generic/Kbuild.asm) " +
         "blueprints " +
         "# $(in)",
@@ -1034,7 +1062,7 @@ genrule {
         "--gen_dir $(genDir) " +
         "--arch_asm_kbuild $(location arch/arm64/include/uapi/asm/Kbuild) " +
         "--arch_include_uapi $(locations arch/arm64/include/uapi/**/*.h) " +
-        "--techpack_include_uapi $(locations techpack/*/include/uapi/*/**/*.h) " +
+        "--techpack_include_uapi $(locations techpack/*/include/uapi/**/*.h) " +
         "--asm_generic_kbuild $(location include/uapi/asm-generic/Kbuild.asm) " +
         "headers " +
         "--old_gen_headers_bp $(location gen_headers_arm64.bp) " +

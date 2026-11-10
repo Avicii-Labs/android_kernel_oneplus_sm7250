@@ -529,7 +529,7 @@ def gen_blueprints(
   arch_prefix = os.path.join('arch', header_arch, generic_prefix)
   generic_src = os.path.join(generic_prefix, rel_glob)
   arch_src = os.path.join(arch_prefix, rel_glob)
-  techpack_src = os.path.join('techpack/*',generic_prefix, '*',rel_glob)
+  techpack_src = os.path.join('techpack/*',generic_prefix, rel_glob)
 
   # Excluded sources, architecture specific.
   exclude_srcs = []
