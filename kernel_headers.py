@@ -340,6 +340,9 @@ def run_headers_install(verbose, gen_dir, headers_install, unifdef, prefix, h):
   (out_h_dirname, out_h_basename) = os.path.split(out_h)
   h_dirname = os.path.dirname(h)
 
+  if not os.path.exists(out_h_dirname):
+    os.makedirs(out_h_dirname)
+
   cmd = [headers_install, out_h_dirname, h_dirname, out_h_basename]
 
   if verbose:
